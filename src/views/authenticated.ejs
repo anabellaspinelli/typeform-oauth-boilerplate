@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Typeform: Test OAuth Scopes</title>
+    <style>
+        body {
+            --accent: #d8495a;
+
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            color: #262627;
+            background-color: #fafafa;
+        }
+
+        main,
+        header {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 0 10px;
+            color: #333;
+        }
+
+        .btn {
+            color: #fff;
+            font-size: 15px;
+            background: var(--accent);
+            display: inline-block;
+            border: none;
+            padding: 3px 12px;
+            min-width: 120px;
+            padding: 10px;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            background-color: #ef6474;
+        }
+
+
+        .token {
+            color: var(--accent);
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Typeform OAuth Boilerplate</h1>
+    </header>
+    <main>
+        <p>You're logged in to Typeform!</p>
+        <p>Your token is:</p>
+        <p class="token">
+            <%= user.access_token %>
+        </p>
+    </main>
+</body>
+
+</html>

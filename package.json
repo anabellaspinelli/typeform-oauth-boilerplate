@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5",
+    "passport": "^0.4.0",
+    "passport-typeform": "^0.0.7"
+  },
+  "scripts": {
+    "start": "export $(cat .env) && node src/app.js",
+    "dev": "export $(cat .env) && nodemon src/app.js"
+  },
+  "name": "typeform-oauth-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic OAuth setup for integrating with Typeform.",
+  "main": "src/app.js",
+  "repository": "https://github.com/anabellaspinelli/typeform-oauth-boilerplate.git",
+  "author": "Anabella Spinelli <anabellaspinelli@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
