@@ -6,12 +6,13 @@
     <title>Typeform: Test OAuth Scopes</title>
     <style>
         body {
-            --accent: #d8495a;
+            --accent: #e2543d;
+            --accent-dull: #eb7152;
 
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             margin: 0;
             color: #262627;
-            background-color: #fafafa;
+            background-color: var(--stone);
         }
 
         main,
@@ -29,7 +30,6 @@
             display: inline-block;
             border: none;
             padding: 3px 12px;
-            min-width: 120px;
             padding: 10px;
             margin: 10px 0;
             text-decoration: none;
@@ -37,7 +37,7 @@
 
         .btn:hover {
             cursor: pointer;
-            background-color: #ef6474;
+            background-color: var(--accent-dull);
         }
 
 
@@ -59,6 +59,9 @@
         <p>Your token is:</p>
         <p class="token">
             <%= user.access_token %>
+        </p>
+        <p>
+            <a class="btn" href="/logout">Logout</a>
         </p>
     </main>
 </body>

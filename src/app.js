@@ -9,7 +9,6 @@ const app = express()
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
-app.use(express.static(path.join(__dirname, '../public')))
 
 app.use(
   cookieSession({
@@ -74,6 +73,11 @@ app.get(
     res.redirect('/authenticated')
   }
 )
+
+app.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
 
 /* =====================
       General Routes
