@@ -88,9 +88,9 @@ app.get('/authenticated', (req, res) =>
   res.render('authenticated', { user: req.user })
 )
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 9031
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log(`app listening on port ${port}`)
+  console.log(`app and running at http://localhost:${port}`)
 })
