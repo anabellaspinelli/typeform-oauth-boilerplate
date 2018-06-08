@@ -1,9 +1,10 @@
+const path = require('path')
+
 const express = require('express')
 const passport = require('passport')
 const TypeformStrategy = require('passport-typeform')
 const cookieSession = require('cookie-session')
-
-const path = require('path')
+const dotenv = require('dotenv').config()
 
 const app = express()
 
@@ -48,7 +49,7 @@ passport.use(
     },
     (accessToken, refreshToken, profile, cb) => {
       /*
-      this verify callback function fires after exchanging code for profile info + token
+      this is the "verify callback", it fires after exchanging the temp code for profile info + token
 
       the second argument on cb() will be on the req.user object
       */
@@ -68,8 +69,18 @@ app.get('/auth/typeform', passport.authenticate('typeform'))
 
 app.get(
   '/auth/typeform/redirect',
-  passport.authenticate('typeform'),
+  (req, res, next) => {
+    // Handle the user declining consent
+    if (!req.query.code) {
+      return res.redirect('/')
+    }
+
+    passport.authenticate('typeform')(req, res, next)
+  },
   (req, res) => {
+    /* this fires AFTER the passport callback function
+    the `user` obj comes in the request as per passport.serialize/deserialize */
+    console.log(req.user)
     res.redirect('/authenticated')
   }
 )
