@@ -1,4 +1,4 @@
-# typeform-oauth-boilerplate
+# Boilerplate OAuth integration for Typeform
 Basic setup to integrate with Typeform through OAuth, using Express and PassportJS.
 
 ## Installation
